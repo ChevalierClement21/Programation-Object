@@ -22,17 +22,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="Accueil.php" method="post">
         <label for="nom">Votre Nom :</label>
-        <input type="text" name="nom"/>
+        <input type="text" name="nom" id="nom" required/>
         <br>
         <label for="prenom">Votre Prénom :</label>
-        <input type="text" name="prenom"/>
+        <input type="text" name="prenom" id="prenom" required/>
         <br>
         <label for="email">Votre Email :</label>
-        <input type="email" name="email"/>
+        <input type="email" name="email" id="email" required/>
         <br>
         <input type="submit" name="Envoyez">
     </form>

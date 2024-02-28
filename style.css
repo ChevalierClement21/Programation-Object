@@ -153,7 +153,7 @@ container{
 
 footer{
     background-color: lightgray;
-    height: 200px;
+    height: 500px;
 }
 
 
@@ -200,4 +200,10 @@ footer{
 
 .logo2{
     width: 50px;
+}
+
+
+label
+input{
+    text-align: center;
 }
