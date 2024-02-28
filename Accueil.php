@@ -31,12 +31,15 @@ function actualite ($actu){
 <body>
         <div class="carte-blog">
         <?php
-        $sql ="SELECT * FROM actualite ;";
+        $sql ="SELECT * FROM actualite ORDER BY date_publication DESC LIMIT 5 ;";
             $temp = $pdo->query($sql);
             while ($actu = $temp->fetch()){
                 actualite($actu);
             }
         ?>
         </div>
+        <?php
+        include 'footer.php';
+        ?>
 </body>
 </html>

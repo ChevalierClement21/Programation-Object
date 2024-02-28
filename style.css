@@ -148,3 +148,56 @@ container{
     display: grid;
     grid-template-rows: 1fr;
 }
+
+
+
+footer{
+    background-color: lightgray;
+    height: 200px;
+}
+
+
+
+#leg{
+    width: calc(1000px/3);
+    float: left;
+}
+
+#propos{
+    width: calc(1000px/3);
+    float: right;
+}
+
+#contact{
+    width: calc(1000px/3);
+    float: right;
+}
+
+#pfooter{
+    max-width: 1000px;
+    width: 1000px;
+    margin:0 auto;
+    overflow: hidden;
+    height: 200px;
+}
+
+#logob{
+    text-align: center;
+}
+
+#taille{
+    width: 20px;
+}
+
+#ecriture{
+    font-size: 10px;
+    text-align: center;
+}
+
+.titre{
+    margin-left: 20px;
+}
+
+.logo2{
+    width: 50px;
+}
