@@ -4,7 +4,7 @@ include 'baseDonnee.php';
 
 $id = $_REQUEST["id"];
 
-$sql = "SELECT * FROM actualite WHERE id_actualite  == ".$id.";";
+$sql = "SELECT * FROM actualite WHERE id_actualite = " . $id . ";";
 $temp = $pdo->query($sql);
 $resultat = $temp->fetch()
 
