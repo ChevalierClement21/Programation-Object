@@ -4,14 +4,16 @@ include 'session.php';
 include 'navbar.php';
 
 function actualite ($actu){
-    echo '<div class="blog-img-container">
-    <a href="detailactu.php?id='.$actu['id_actualite'].'"><img src="'.$actu['image'].'"></a>
-    <div class="white-card">
-    <h3 class="titre-blog">'.$actu['titre'].'</h3>
-    <h4>'.$actu['tags'].'</h4>
-    <p class="txt-blog-2"> Auteur :'.$actu['auteur'].' Source :'.$actu['source'].'</p>
-    </div>';
-
+    echo '
+    <div class="blog-img-container">
+        <a href="detailactu.php?id='.$actu['id_actualite'].'"><img src="'.$actu['image'].'"></a>
+        <div class="white-card">
+            <h3 class="titre-blog">'.$actu['titre'].'</h3>
+            <h4>'.$actu['tags'].'</h4>
+            <p class="txt-blog-2"> Auteur :'.$actu['auteur'].' Source :'.$actu['source'].'</p>
+        </div>
+    </div> ';
+    
 }
 
 
@@ -27,7 +29,7 @@ function actualite ($actu){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+        <div class="carte-blog">
         <?php
         $sql ="SELECT * FROM actualite ;";
             $temp = $pdo->query($sql);
@@ -35,6 +37,6 @@ function actualite ($actu){
                 actualite($actu);
             }
         ?>
-    </div>
+        </div>
 </body>
 </html>

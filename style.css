@@ -9,11 +9,142 @@ a{
     text-decoration: none;
 }
 
-img{
+#logo{
     max-width: 50px;
 }
 
 
 container{
     width: 1200px;
+}
+
+
+.carte-blog{
+    width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    padding-top: 50px;
+}
+.carte-blog h4{
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.carte-blog img{
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    margin: 0 auto;
+    transition: 0.5s;
+}
+.blog-img-container{
+    position: relative;
+    margin-bottom: 100px;
+}
+.white-card{
+    position: absolute;
+    bottom: -40px;
+    left: 85px;
+    width: 330px;
+    height: 100px;
+    background-color: white;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.titre-blog{
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+.txt-blog{
+    margin: 5px 20px;
+    font-size: 12px;
+    text-align: justify;
+}
+.txt-blog-2{
+    margin: 0;
+    font-size: 12px;
+    bottom: 5px;
+    right: 15px;
+    position: absolute;
+}
+.carte-blog a{
+    color: black;
+}
+.carte-blog img:hover{
+    transform: scale(1.05);
+}
+.white-card:hover{
+    transform: scale(1.1);
+}
+.fleches{
+    margin: 0 auto;
+    text-align: center;
+}
+.fleches img{
+    width: 100px;
+}
+
+
+
+
+
+.lire-blog-container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.lire-blog-entete{
+    width: 945px;
+    height: 100px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #A982FF 0%, #55DBCB 100%);
+    border: 1px solid #031C30;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    text-align: center;
+}
+.titre-lire-blog{
+    font-size: 36px;
+    margin-top: 25px;
+}
+.lire-blog-paper{
+    width: 945px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.36);
+    border: 1px solid #031C30;
+    border-top: none;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.lire-blog-paper img{
+    float: left;
+    margin: 40px;
+    width: 450px;
+    height: 250px;
+    border: 1px solid #031C30;
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+.lire-blog-paper h4{
+    margin: 0;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+.lire-blog-paper p{
+    margin: 0;
+    padding-top: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.text-lire-blog{
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-rows: 1fr;
 }
