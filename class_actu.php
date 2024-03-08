@@ -1,6 +1,6 @@
 <?php 
-
-Class Actualite{
+require_once'classePDOMERE.php';
+Class Actualite extends donneePdo{
     public $titre;
     public $contenu;
     public $image;
@@ -25,18 +25,17 @@ Class Actualite{
 
     public static function premierArticle($pdo){
         $sql = "SELECT * FROM actualite ORDER BY date_publication DESC LIMIT 5 ;";
-        $temp = $pdo->query($sql);
+        $temp = donneePdo::AfficherPremier($sql);
         while ($actu = $temp->fetch()) {
             $actualite = new Actualite($actu);
             actualite($actualite);
         }
     }
 
-    public static function detailArticle($pdo,$id){
+    public static function detailArticle($id){
 
         $sql = "SELECT * FROM actualite WHERE id_actualite = " . $id . ";";
-        $temp = $pdo->query($sql);
-        $resultat = $temp->fetch();
+        $resultat = donneePdo::detail($sql);
         $actualite = new Actualite($resultat);
         return $actualite;
     }

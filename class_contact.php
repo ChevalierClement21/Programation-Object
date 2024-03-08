@@ -1,5 +1,6 @@
 <?php
-Class Contact{
+require_once'classePDOMERE.php';
+Class Contact extends donneePdo{
     public $nom;
     public $prenom;
     public $mail;
@@ -12,7 +13,7 @@ Class Contact{
 
     public static function ajout($pdo ,Contact $contact) {
         $sql = 'INSERT INTO contacts (nom, prenom, mail) VALUES (?, ?, ?)';
-        $stmt = $pdo->prepare($sql);
+        $stmt = donneePdo::Ajouter($sql);
         $stmt->execute([$contact->nom, $contact->prenom, $contact->mail]);
         
 

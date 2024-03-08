@@ -4,7 +4,7 @@ include 'baseDonnee.php';
 require_once'class_actu.php';
 $id = $_REQUEST["id"];
 
-$actualite = Actualite::detailArticle($pdo,$id);
+$actualite = Actualite::detailArticle($id);
 
 ?>
 
