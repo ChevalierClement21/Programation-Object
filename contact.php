@@ -1,16 +1,19 @@
 <?php 
-    include 'navbar.php';
-    include 'baseDonnee.php';
+    require_once 'navbar.php';
+    require_once 'baseDonnee.php';
+    require_once 'class_contact.php';
 
 
     if (isset($_REQUEST["prenom"], $_REQUEST["nom"], $_REQUEST["email"])){
         $prenom = htmlentities($_REQUEST["prenom"]);
         $nom = htmlentities($_REQUEST["nom"]);
         $email = htmlentities($_REQUEST["email"]);
+    
+        $contact = new Contact($prenom, $nom, $email);
+        $contact ->ajout($pdo,$contact);
+        header("Location: Accueil.php");
+        exit();
 
-        $sql = 'INSERT INTO contacts (nom,prenom,mail) VALUES("'.$nom.'","'.$prenom.'","'.$email.'");';
-        $temp = $pdo->exec($sql);
-        echo "Formulaire envoyez";
     }
 
 ?>
@@ -25,7 +28,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="Accueil.php" method="post">
+    <form action="contact.php" method="post">
         <label for="nom">Votre Nom :</label>
         <input type="text" name="nom" id="nom" required/>
         <br>
@@ -40,7 +43,7 @@
 
 
     <?php
-        include 'footer.php';
+        require_once 'footer.php';
     ?>
 </body>
 </html>

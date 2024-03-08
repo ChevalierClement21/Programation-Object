@@ -2,18 +2,17 @@
 include 'baseDonnee.php';
 include 'session.php';
 include 'navbar.php';
-
-function actualite ($actu){
-    echo '
+require_once 'class_actu.php';
+function actualite ($actualite){
+    echo'
     <div class="blog-img-container">
-        <a href="detailactu.php?id='.$actu['id_actualite'].'"><img src="'.$actu['image'].'"></a>
+        <a href="detailactu.php?id='. $actualite->id_actu.'"><img src="'.$actualite->image.'"></a>
         <div class="white-card">
-            <h3 class="titre-blog">'.$actu['titre'].'</h3>
-            <h4>'.$actu['tags'].'</h4>
-            <p class="txt-blog-2"> Auteur :'.$actu['auteur'].' Source :'.$actu['source'].'</p>
+            <h3 class="titre-blog">'.$actualite->titre.'</h3>
+            <h4>'.$actualite->tags.'</h4>
+            <p class="txt-blog-2"> Auteur :'.$actualite->auteur.' Source :'.$actualite->source.'</p>
         </div>
     </div> ';
-    
 }
 
 
@@ -31,11 +30,7 @@ function actualite ($actu){
 <body>
         <div class="carte-blog">
         <?php
-        $sql ="SELECT * FROM actualite ORDER BY date_publication DESC LIMIT 5 ;";
-            $temp = $pdo->query($sql);
-            while ($actu = $temp->fetch()){
-                actualite($actu);
-            }
+        Actualite::premierArticle($pdo);
         ?>
         </div>
         <?php

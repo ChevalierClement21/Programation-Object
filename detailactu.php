@@ -1,12 +1,10 @@
 <?php
 include 'navbar.php';
 include 'baseDonnee.php';
-
+require_once'class_actu.php';
 $id = $_REQUEST["id"];
 
-$sql = "SELECT * FROM actualite WHERE id_actualite = " . $id . ";";
-$temp = $pdo->query($sql);
-$resultat = $temp->fetch()
+$actualite = Actualite::detailArticle($pdo,$id);
 
 ?>
 
@@ -21,25 +19,25 @@ $resultat = $temp->fetch()
 <body>
     <div class='lire-blog-container'>
         <div class='lire-blog-entete'>
-            <h3 class='titre-lire-blog'><?php echo $resultat['titre'] ?></h3>
+            <h3 class='titre-lire-blog'><?php echo $actualite->titre ?></h3>
         </div>
         <div class='lire-blog-paper'>
-            <img src="<?php echo $resultat['image'] ?>" alt="">
+            <img src="<?php echo $actualite->image ?>" alt="">
             <h4>Présentation du blog :</h4>
                 <div>
                     <p> <!-- description du blog  -->
-                    Tag : <?php echo $resultat['tags']?>
+                    Tag : <?php echo $actualite->tags?>
                     </p>
                     <p> <!-- description du blog  -->
-                    Nom auteur : <?php echo $resultat['auteur'] ?>
+                    Nom auteur : <?php echo $actualite->auteur ?>
                     </p>
                     <p>
-                    Source: <?php echo $resultat["source"]   ?>
+                    Source: <?php echo $actualite->source   ?>
                     </p>
                 </div>
                 <div>
                     <p class='text-lire-blog'>
-                        <?php echo $resultat['corps_texte'] ?>
+                        <?php echo $actualite->contenu ?>
                     </p>
                 </div>
             </div>
