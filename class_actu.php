@@ -33,12 +33,24 @@ Class Actualite extends donneePdo{
     }
 
     public static function detailArticle($id){
-
         $sql = "SELECT * FROM actualite WHERE id_actualite = " . $id . ";";
         $resultat = donneePdo::detail($sql);
         $actualite = new Actualite($resultat);
         return $actualite;
     }
+
+    public static function Article($pdo){
+        $sql = "SELECT * FROM actualite ORDER BY date_publication ;";
+        $temp = donneePdo::AfficherPremier($sql);
+        $actualites = array(); 
+        while ($actu = $temp->fetch()) {
+            $actualite = new Actualite($actu);
+            $actualites[] = $actualite;
+        }
+        return $actualites;
+        
+    }
 }
+
 
 ?>

@@ -1,6 +1,6 @@
 <?php 
 require_once 'class_menu.php';
-class SousMenu {
+class Menu {
     protected $title;
     protected $items = [];
 
@@ -9,7 +9,7 @@ class SousMenu {
     }
 
     public function Ajout($title, $url) {
-        $this->items[] = new Menu($title, $url);
+        $this->items[] = new ComposantMenu($title, $url);
     }
 
     public function affichage() {
@@ -22,6 +22,7 @@ class SousMenu {
         $html .= "</ul></li>";
         return $html;
     }
+    
 }
 
 ?>

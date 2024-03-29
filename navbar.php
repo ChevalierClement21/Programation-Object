@@ -5,7 +5,7 @@ $menuPrincipal = [
     "Contact" => "contact.php"
 ];
 
-$menu = new SousMenu("Menu");
+$menu = new Menu("Menu");
 $menu->Ajout("Option 1", "#");
 $menu->Ajout("Option 2", "#");
 $menu->Ajout("Autre option", "#");
