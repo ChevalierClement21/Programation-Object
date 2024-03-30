@@ -27,7 +27,7 @@ Class Gestion extends donneePdo{
     public static function modifier($pdo)
     {
         $_REQUEST
-        $sql ='UPDATE actualite SET titre "'.$id.'" ';
+        $sql ='UPDATE actualite SET titre "'.$id.'"; ';
     }
 }
 
